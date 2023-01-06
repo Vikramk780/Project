@@ -35,7 +35,7 @@ public class IntegrationModellerPage {
 
 	private By imageupload = By.xpath("(//*[local-name()='svg' and @class='MuiSvgIcon-root'])[46]");
 
-	private By uploadbtn = By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
+	private By uploadbtn = By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
 
 	private By categorydrop = By.xpath("(//input[@id='free-chip-input'])[7]"); // WebElement.sendKeys(Keys.DOWN,
 																				// Keys.RETURN);
