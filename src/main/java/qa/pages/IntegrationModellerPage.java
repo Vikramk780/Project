@@ -68,6 +68,13 @@ public class IntegrationModellerPage {
 		
 		////test////
 		
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
+		jse.executeScript("arguments[0].click();", webElement);
+
+		Thread.sleep(3000);
+		
 		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
@@ -145,31 +152,31 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(1000);
 
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
+// 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
-		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
-		jse.executeScript("arguments[0].click();", webElement);
+// 		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
+// 		jse.executeScript("arguments[0].click();", webElement);
 
-		Thread.sleep(3000);
+// 		Thread.sleep(3000);
 
-		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-		Thread.sleep(1000);
-		rr.keyPress(KeyEvent.VK_CONTROL);
-		Thread.sleep(1000);
+// 		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
+// 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+// 		Thread.sleep(1000);
+// 		rr.keyPress(KeyEvent.VK_CONTROL);
+// 		Thread.sleep(1000);
 
-		rr.keyPress(KeyEvent.VK_V);
-		Thread.sleep(1000);
-		rr.keyRelease(KeyEvent.VK_V);
-		rr.keyRelease(KeyEvent.VK_CONTROL);
+// 		rr.keyPress(KeyEvent.VK_V);
+// 		Thread.sleep(1000);
+// 		rr.keyRelease(KeyEvent.VK_V);
+// 		rr.keyRelease(KeyEvent.VK_CONTROL);
 
-		rr.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(1000);
-		rr.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
+// 		rr.keyPress(KeyEvent.VK_ENTER);
+// 		Thread.sleep(1000);
+// 		rr.keyRelease(KeyEvent.VK_ENTER);
+// 		Thread.sleep(3000);
 
-		driver.findElement(uploadbtn).click();
-		Thread.sleep(3000);
+// 		driver.findElement(uploadbtn).click();
+// 		Thread.sleep(3000);
 
 		driver.findElement(testBTN).click();
 		Thread.sleep(4000);
