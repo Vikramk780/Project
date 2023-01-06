@@ -22,24 +22,25 @@ public class IntegrationModellerPage {
 
 	private By typeDrope = By.xpath("(//input[@id='type'])[2]");
 
-	private By itsmvalue = By.xpath("//li[11]");
+	private By itsmvalue = By.xpath("//li[@id='type-option-9']");
 	private By selecttypeDrope = By.xpath("(//input[@type='checkbox'])[27]");
 	private By supportVersion = By.xpath("(//input[@id='free-chip-input'])[5]");
 	private By variableDefination = By.xpath("(//input[@id='free-chip-input'])[6]");
-	private By servicenow_instance = By.xpath("(//input[@type=\"text\"])[11]");
-	private By username_ = By.xpath("(//input[@type=\"text\"])[12]");
+	private By servicenow_instance = By.xpath("(//input[@type=\"text\"])[14]");
+	private By username_ = By.xpath("(//input[@type=\"text\"])[15]");
 
-	private By password_ = By.xpath("(//input[@type=\"text\"])[13]");
+	private By password_ = By.xpath("(//input[@type=\"text\"])[16]");
 
 	private By imageupload = By.xpath("(//*[local-name()='svg' and @class='MuiSvgIcon-root'])[46]");
 
-	private By uploadbtn = By.xpath("(//button[@type=\"button\"])[22]");
+	private By uploadbtn = By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
 
 	private By categorydrop = By.xpath("(//input[@id='free-chip-input'])[7]"); // WebElement.sendKeys(Keys.DOWN,
 																				// Keys.RETURN);
+	private By servicedesk = By.xpath("//li[contains(text(),'ServiceDesk')]");
 	private By curlfield = By.xpath("(//textarea[@id='curlOperation'])[2]");
 	private By testBTN = By.xpath("(//button[@type=\"submit\"])[2]");
-	private By nextbtn = By.xpath("(//button[@type=\"button\"])[24]");
+	private By nextbtn = By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[4]/button[2]/span[1]");
 	private By textarea = By
 			.xpath("(//textarea[@placeholder='Write a few words about the integration and what it helps achieve'])[1]");
 	private By textarea2 = By
@@ -63,7 +64,7 @@ public class IntegrationModellerPage {
 //		waithelper.forThisElementWait(imageupload, 20).sendKeys("./SNOW.jfif");
 //		waithelper.forThisElementWait(imageupload, 20).click();
 //
-//		String filename = "./SNOW.jfif";
+//		String filename = "C:\\Users\\kvikram\\newEclipse\\CucumberProjectWithPom\\SNOW.jfif";
 //		File file = new File(filename);
 //		String path = file.getAbsolutePath();
 //		// give the URL to upload
@@ -80,33 +81,30 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(2000);
 		Robot r = new Robot();
+		
+		Actions act = new Actions(driver);
 
 		driver.findElement(supportVersion).sendKeys("1.1");
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(500);
-
-		waithelper.forThisElementWait(variableDefination, 20).sendKeys("servicenow_instance");
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		act.moveToElement(waithelper.forThisElementWait(supportVersion, 20)).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(1000);
+		
+		
+		driver.findElement(variableDefination).sendKeys("servicenow_instance");
+		
+		act.moveToElement(waithelper.forThisElementWait(variableDefination, 20)).sendKeys(Keys.ENTER).build().perform();
 		Thread.sleep(1000);
 
 		waithelper.forThisElementWait(variableDefination, 20).sendKeys("username");
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		act.moveToElement(waithelper.forThisElementWait(variableDefination, 20)).sendKeys(Keys.ENTER).build().perform();
 		Thread.sleep(1000);
-
+		
 		waithelper.forThisElementWait(variableDefination, 20).sendKeys("password");
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		act.moveToElement(waithelper.forThisElementWait(variableDefination, 20)).sendKeys(Keys.ENTER).build().perform();
 		Thread.sleep(1000);
-
+		
 		waithelper.forThisElementWait(categorydrop, 20).click();
-		r.keyPress(KeyEvent.VK_DOWN);
-		r.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
-		r.keyRelease(KeyEvent.VK_DOWN);
-		r.keyRelease(KeyEvent.VK_ENTER);
+		waithelper.forThisElementWait(servicedesk, 20).click();
+		
 		Thread.sleep(2000);
 
 		driver.findElement(curlfield).sendKeys(
@@ -125,7 +123,7 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(3000);
 
-		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
+		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
@@ -146,7 +144,7 @@ public class IntegrationModellerPage {
 
 		driver.findElement(testBTN).click();
 		Thread.sleep(4000);
-		driver.findElement(nextbtn).click();
+		waithelper.forThisElementWait(nextbtn,25).click();
 		Thread.sleep(3000);
 
 		Thread.sleep(4000);
