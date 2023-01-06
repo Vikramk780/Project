@@ -125,7 +125,7 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(3000);
 
-		StringSelection filepath = new StringSelection("./SNOW.jfif");
+		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
