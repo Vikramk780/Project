@@ -77,19 +77,19 @@ public class IntegrationModellerPage {
 		
 		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		rr.keyPress(KeyEvent.VK_CONTROL);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 
 		rr.keyPress(KeyEvent.VK_V);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		rr.keyRelease(KeyEvent.VK_V);
 		rr.keyRelease(KeyEvent.VK_CONTROL);
 
 		rr.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		rr.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
+		Thread.sleep(3300);
 
 		waithelper.forThisElementWait(uploadbtn,25).click();
 		Thread.sleep(3000);
