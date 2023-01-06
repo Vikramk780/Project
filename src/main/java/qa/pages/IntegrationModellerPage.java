@@ -64,7 +64,7 @@ public class IntegrationModellerPage {
 //		waithelper.forThisElementWait(imageupload, 20).sendKeys("./SNOW.jfif");
 //		waithelper.forThisElementWait(imageupload, 20).click();
 //
-//		String filename = "C:\\Users\\kvikram\\newEclipse\\CucumberProjectWithPom\\SNOW.jfif";
+//		String filename = "./SNOW.jfif";
 //		File file = new File(filename);
 //		String path = file.getAbsolutePath();
 //		// give the URL to upload
