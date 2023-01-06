@@ -75,7 +75,7 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(3000);
 		
-		StringSelection filepath = new StringSelection("./SNOW.jfif");
+		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
@@ -91,7 +91,7 @@ public class IntegrationModellerPage {
 		rr.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 
-		driver.findElement(uploadbtn).click();
+		waithelper.forThisElementWait(uploadbtn,25).click();
 		Thread.sleep(3000);
 		
 		
