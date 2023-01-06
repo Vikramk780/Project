@@ -39,8 +39,8 @@ public class DriverFactory {
 		}
 
 		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().setSize(new Dimension(1440, 900));
 		
-		getDriver().manage().window().maximize();
 		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return getDriver();
 
