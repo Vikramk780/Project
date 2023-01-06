@@ -13,6 +13,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class IntegrationModellerPage {
 	private WebDriver driver;
@@ -35,7 +37,7 @@ public class IntegrationModellerPage {
 
 	private By imageupload = By.xpath("(//*[local-name()='svg' and @class='MuiSvgIcon-root'])[46]");
 
-	private By uploadbtn = By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
+	private By uploadbtn = By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
 
 	private By categorydrop = By.xpath("(//input[@id='free-chip-input'])[7]"); // WebElement.sendKeys(Keys.DOWN,
 																				// Keys.RETURN);
@@ -64,9 +66,7 @@ public class IntegrationModellerPage {
 		waithelper.forThisElementWait(createbtn, 20).click();
 		Thread.sleep(2000);
 		
-		
-		
-		////test////
+		////test//////
 		
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
@@ -74,29 +74,36 @@ public class IntegrationModellerPage {
 		jse.executeScript("arguments[0].click();", webElement);
 
 		Thread.sleep(3000);
-		
 		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
+//		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-		Thread.sleep(1200);
+		Thread.sleep(1000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
-		Thread.sleep(1200);
+		Thread.sleep(1000);
 
 		rr.keyPress(KeyEvent.VK_V);
-		Thread.sleep(1200);
+		Thread.sleep(1000);
 		rr.keyRelease(KeyEvent.VK_V);
 		rr.keyRelease(KeyEvent.VK_CONTROL);
 
 		rr.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(1200);
+		Thread.sleep(1000);
 		rr.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3300);
-
-		waithelper.forThisElementWait(uploadbtn,25).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]"))); 
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 		
 		
 		
-		///test////
+		
+		
+		///test//////
+		
+		
+		
 //		waithelper.forThisElementWait(imageupload, 20).sendKeys("./SNOW.jfif");
 //		waithelper.forThisElementWait(imageupload, 20).click();
 //
@@ -152,31 +159,10 @@ public class IntegrationModellerPage {
 
 		Thread.sleep(1000);
 
-// 		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		
 
-// 		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
-// 		jse.executeScript("arguments[0].click();", webElement);
-
-// 		Thread.sleep(3000);
-
-// 		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
-// 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-// 		Thread.sleep(1000);
-// 		rr.keyPress(KeyEvent.VK_CONTROL);
-// 		Thread.sleep(1000);
-
-// 		rr.keyPress(KeyEvent.VK_V);
-// 		Thread.sleep(1000);
-// 		rr.keyRelease(KeyEvent.VK_V);
-// 		rr.keyRelease(KeyEvent.VK_CONTROL);
-
-// 		rr.keyPress(KeyEvent.VK_ENTER);
-// 		Thread.sleep(1000);
-// 		rr.keyRelease(KeyEvent.VK_ENTER);
-// 		Thread.sleep(3000);
-
-// 		driver.findElement(uploadbtn).click();
-// 		Thread.sleep(3000);
+//		waithelper.forThisElementWait(uploadbtn,30).click();
+		Thread.sleep(3000);
 
 		driver.findElement(testBTN).click();
 		Thread.sleep(4000);
