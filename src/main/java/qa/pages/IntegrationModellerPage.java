@@ -35,7 +35,7 @@ public class IntegrationModellerPage {
 
 	private By imageupload = By.xpath("(//*[local-name()='svg' and @class='MuiSvgIcon-root'])[46]");
 
-	private By uploadbtn = By.xpath("(//button[@type='button'])[27]");
+	private By uploadbtn = By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]");
 
 	private By categorydrop = By.xpath("(//input[@id='free-chip-input'])[7]"); // WebElement.sendKeys(Keys.DOWN,
 																				// Keys.RETURN);
@@ -63,6 +63,33 @@ public class IntegrationModellerPage {
 
 		waithelper.forThisElementWait(createbtn, 20).click();
 		Thread.sleep(2000);
+		
+		
+		
+		////test////
+		
+		StringSelection filepath = new StringSelection("./SNOW.jfif");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+		Thread.sleep(1000);
+		rr.keyPress(KeyEvent.VK_CONTROL);
+		Thread.sleep(1000);
+
+		rr.keyPress(KeyEvent.VK_V);
+		Thread.sleep(1000);
+		rr.keyRelease(KeyEvent.VK_V);
+		rr.keyRelease(KeyEvent.VK_CONTROL);
+
+		rr.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+		rr.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+
+		driver.findElement(uploadbtn).click();
+		Thread.sleep(3000);
+		
+		
+		
+		///test////
 //		waithelper.forThisElementWait(imageupload, 20).sendKeys("./SNOW.jfif");
 //		waithelper.forThisElementWait(imageupload, 20).click();
 //
