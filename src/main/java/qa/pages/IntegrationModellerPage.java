@@ -166,7 +166,11 @@ public class IntegrationModellerPage {
 
 		driver.findElement(testBTN).click();
 		Thread.sleep(4000);
-		waithelper.forThisElementWait(nextbtn,25).click();
+		
+		WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[4]/button[2]/span[1]"))); 
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element1);
+		
+// 		waithelper.forThisElementWait(nextbtn,25).click();
 		Thread.sleep(3000);
 
 		Thread.sleep(4000);
