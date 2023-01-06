@@ -22,7 +22,7 @@ WebDriver driver;
 		
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(secondss)).pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
 		
-	WebElement ele2=	wait.until(ExpectedConditions.elementToBeClickable(ele));
+	WebElement ele2=	wait.until(ExpectedConditions.visibilityOfElementLocated(ele));
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
