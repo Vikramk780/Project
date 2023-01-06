@@ -173,14 +173,14 @@ public class IntegrationModellerPage {
 // 		waithelper.forThisElementWait(nextbtn,25).click();
 		Thread.sleep(3000);
 
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 
-		waithelper.forThisElementWait(By.xpath(
-				"(//textarea[@placeholder='Write a few words about the integration and what it helps achieve'])[2]"),20)
+		driver.findElement(By.xpath(
+				"(//textarea[@placeholder='Write a few words about the integration and what it helps achieve'])[2]"))
 				.sendKeys("Open Ticket ,Close Ticket");
 		Thread.sleep(2000);
-		waithelper.forThisElementWait(By.xpath(
-				"(//textarea[@placeholder='Write a few words about the capabilities and potential tasks that can be achieved by this integration - example: Open a ticker, update a ticket, assign ticket to a queue, etc.'])[2]"),20)
+		driver.findElement(By.xpath(
+				"(//textarea[@placeholder='Write a few words about the capabilities and potential tasks that can be achieved by this integration - example: Open a ticker, update a ticket, assign ticket to a queue, etc.'])[2]"))
 				.sendKeys("This Integration Is having Capability to open ticket and close ticket");
 		Thread.sleep(2000);
 
