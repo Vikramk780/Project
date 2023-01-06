@@ -48,7 +48,7 @@ public class EventHubPage {
 		waithelper.forThisElementWait(By.xpath("(//*[local-name()='svg' and @class=\"MuiSvgIcon-root\"])[21]"),30).click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("//button[@aria-label='Search']")).sendKeys("create S3");
+		driver.findElement(By.xpath("//button[@aria-label='Search']")).sendKeys("Test Description");
 		Thread.sleep(4000);
 
 		waithelper.forThisElementWait(event1, 20).click();
