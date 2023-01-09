@@ -128,7 +128,7 @@ public class IntegrationModellerPage {
 // 		jse.executeScript("arguments[0].click();", webElement);
 
 		Thread.sleep(3000);
-		StringSelection filepath = new StringSelection("C:\Users\Deva\Downloads\\servicenow.jpg");
+		StringSelection filepath = new StringSelection("C:\\Users\\Deva\Downloads\\servicenow.jpg");
 // 		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
