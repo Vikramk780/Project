@@ -44,7 +44,7 @@ public class IntegrationModellerPage {
 	private By servicedesk = By.xpath("//li[contains(text(),'ServiceDesk')]");
 	private By curlfield = By.xpath("(//textarea[@id='curlOperation'])[2]");
 	private By testBTN = By.xpath("(//button[@type=\"submit\"])[2]");
-	private By nextbtn = By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[4]/button[2]/span[1]");
+	private By nextbtn = By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[4]/button[2]");
 	private By textarea = By
 			.xpath("(//textarea[@placeholder='Write a few words about the integration and what it helps achieve'])[1]");
 	private By textarea2 = By
@@ -128,13 +128,14 @@ public class IntegrationModellerPage {
 		////test//////
 		
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("document.getElementById('uploadImage').click();");
 
-		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
-		jse.executeScript("arguments[0].click();", webElement);
+// 		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
+// 		jse.executeScript("arguments[0].click();", webElement);
 
 		Thread.sleep(3000);
-// 		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
-		StringSelection filepath = new StringSelection("./SNOW.jfif");
+		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
+// 		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
@@ -152,7 +153,7 @@ public class IntegrationModellerPage {
 		
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]"))); 
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]"))); 
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 		
 		
