@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"./src/test/resources/parallel"},
+		features = {"./src/test/resources/parallel/IntegrationModller.feature"},
 		glue = {"parallel"}, //this parallel relavant to applicationhooks
 		monochrome =true,
 		dryRun =false,
