@@ -72,15 +72,7 @@ public class IntegrationModellerPage {
 		
 		
 		
-//		waithelper.forThisElementWait(imageupload, 20).sendKeys("./SNOW.jfif");
-//		waithelper.forThisElementWait(imageupload, 20).click();
-//
-//		String filename = "./SNOW.jfif";
-//		File file = new File(filename);
-//		String path = file.getAbsolutePath();
-//		// give the URL to upload
-//
-//		waithelper.forThisElementWait(imageupload, 20).click();
+
 
 		String randomeBTUname = RandomStringUtils.random(4, "abca_d");
 		String randomeBTUname1 = "testAutomation".concat(randomeBTUname + "tem_st");
@@ -136,7 +128,7 @@ public class IntegrationModellerPage {
 // 		jse.executeScript("arguments[0].click();", webElement);
 
 		Thread.sleep(3000);
-		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
+		StringSelection filepath = new StringSelection("C:\Users\Deva\Downloads\\servicenow.jpg");
 // 		StringSelection filepath = new StringSelection("./SNOW.jfif");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(1000);
