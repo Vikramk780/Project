@@ -51,7 +51,7 @@ public class AssetManagemnetPage {
 
 		waithelper.forThisElementWait(choosebtn, 20).click();
 		Thread.sleep(3000);
-		StringSelection filepath = new StringSelection("./asset-list-sample.csv");
+		StringSelection filepath = new StringSelection("C:\\Users\\Deva\\Downloads\\sample.csv");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		Thread.sleep(2000);
 		rr.keyPress(KeyEvent.VK_CONTROL);
