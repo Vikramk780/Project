@@ -67,40 +67,6 @@ public class IntegrationModellerPage {
 		Thread.sleep(2000);
 		
 		
-		////test////
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("document.getElementById('uploadImage').click();");
-
-// 		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
-// 		jse.executeScript("arguments[0].click();", webElement);
-
-		Thread.sleep(3000);
-		StringSelection filepath = new StringSelection("C:\\Users\\kvikram\\Downloads\\SNOW.jfif");
-// 		StringSelection filepath = new StringSelection("./SNOW.jfif");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-		Thread.sleep(1000);
-		rr.keyPress(KeyEvent.VK_CONTROL);
-		Thread.sleep(1000);
-
-		rr.keyPress(KeyEvent.VK_V);
-		Thread.sleep(1000);
-		rr.keyRelease(KeyEvent.VK_V);
-		rr.keyRelease(KeyEvent.VK_CONTROL);
-
-		rr.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(1000);
-		rr.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
-		
-		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[4]/div[3]/div[2]/div[1]/form[1]/div[1]/div[2]/div[4]/button[1]/span[1]/div[1]"))); 
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-		
-		
-		
-		
-		/////test////
 		
 		
 		
@@ -163,7 +129,7 @@ public class IntegrationModellerPage {
 		
 		////test//////
 		
-		// JavascriptExecutor jse = (JavascriptExecutor) driver;
+	 JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("document.getElementById('uploadImage').click();");
 
 // 		WebElement webElement = driver.findElement(By.xpath("(//label[contains(text(),\"Select file \")])[1]"));
